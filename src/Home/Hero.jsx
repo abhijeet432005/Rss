@@ -138,7 +138,7 @@ const Hero = () => {
         </div>
 
         {/* Right: text + donate button */}
-        <div className="right-text flex justify-start md:justify-center md:w-[40vw] items-center md:mt-30 mr-auto md:mr-0">
+        <div className="right-text flex justify-start md:justify-center md:w-[40vw] md:ml-10 items-center md:mt-30 mr-auto md:mr-0">
           <div className="flex flex-col gap-6">
             <p className="text-sm md:text-base leading-relaxed md:max-w-lg" style={{ color: "#5C4A3A" }}>
               Giveza is a purpose-driven foundation &amp; NGO committed to
