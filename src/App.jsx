@@ -1,16 +1,13 @@
 import React from "react";
-import Hero from "./Home/Hero";
-import PurposeWithImpact from "./Home/PurposeWithImpact";
-import UpcomingEvents from "./Home/UpcomingEvents";
-import ConnectSection from "./Home/ConnectSection";
+import Home from './pages/Home'
+import ContactPage from "./pages/Contact";
+import Volunteers from "./pages/Volunteers";
+import MainRoutes from "./routes/MainRoutes";
 
 const App = () => {
   return (
     <div>
-      <Hero />
-      <PurposeWithImpact />
-      <UpcomingEvents />
-      <ConnectSection />
+      <MainRoutes />
     </div>
   );
 };
