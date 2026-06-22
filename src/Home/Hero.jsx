@@ -76,7 +76,7 @@ const Hero = () => {
       style={{ backgroundColor: "#F9F6F2" }}
     >
       {/* Headline */}
-      <div className="text-center mb-8 md:mb-10 overflow-hidden">
+      <div className="text-center mb-8 md:mb-10 overflow-hidden mt-20">
         <h1
           className="font-bold uppercase md:leading-[8rem] leading-[3rem] tracking-tight"
           style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "#512731" }}

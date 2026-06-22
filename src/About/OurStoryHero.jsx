@@ -90,7 +90,7 @@ const OurStoryHero = () => {
       style={{ backgroundColor: "#F9F6F2" }}
     >
       <p
-        className="hero-eyebrow text-sm font-semibold tracking-wider mb-2"
+        className="hero-eyebrow text-sm font-semibold tracking-wider mb-2 mt-20"
         style={{ color: "#3D1A1A" }}
       >
         [ ABOUT US ]
