@@ -220,8 +220,7 @@ const PurposeWithImpact = () => {
               className="quote-text text-sm md:text-base leading-relaxed max-w-110"
               style={{ color: "#6B5B50" }}
             >
-              Whether it's medical aid or food distribution, we believe in
-              showing up, stepping in &amp; making it personal.
+              Whether addressing local concerns, supporting community development, or advocating for public welfare, we believe in being present, listening to people, and taking meaningful action.
             </p>
           </div>
         </div>
