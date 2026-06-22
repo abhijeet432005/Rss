@@ -96,7 +96,7 @@ const OurStoryHero = () => {
         [ ABOUT US ]
       </p>
       <h1
-        className="hero-heading leading-none overflow-hidden"
+        className="hero-heading overflow-hidden"
         style={{ fontSize: "clamp(2.2rem, 7vw, 5.5rem)", color: "#3D1A1A" }}
       >
         Our Story
@@ -108,8 +108,7 @@ const OurStoryHero = () => {
         className="hero-sub text-base md:text-lg mb-10 md:mb-16"
         style={{ color: "#5C4A3A" }}
       >
-        We deliver long-term change through focused programs in health,
-        education &amp; child welfare.
+        We work towards inclusive development through better governance, <br /> quality education, accessible healthcare, and sustainable economic growth.
       </p>
 
       {/* Image grid — 3 columns on desktop, single column on mobile */}
@@ -126,7 +125,7 @@ const OurStoryHero = () => {
           }}
         >
           <img
-            src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/6941301c9571c208f03ad108_about-01.webp"
+            src="https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic23.JPG"
             alt="Smiling girl with soccer ball"
             className="w-full h-full object-cover block"
           />
@@ -138,7 +137,7 @@ const OurStoryHero = () => {
           style={{ aspectRatio: "720/520", zIndex: 2 }}
         >
           <img
-            src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/6941301c9571c208f03ad10e_7256d9fd119adf1038717316306001f9_about-main.webp"
+            src="https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic18.JPG"
             alt="Group of children"
             className="w-full h-full object-cover block"
           />
@@ -156,7 +155,7 @@ const OurStoryHero = () => {
           }}
         >
           <img
-            src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/6941301c9571c208f03ad104_about-02.webp"
+            src="https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic20.JPG"
             alt="Food distribution"
             className="w-full h-full object-cover block"
           />
@@ -167,9 +166,7 @@ const OurStoryHero = () => {
         className="hero-bottom-text max-w-2xl text-base md:text-lg leading-relaxed mb-6 mx-auto"
         style={{ color: "#5C4A3A" }}
       >
-        Giveza is a purpose-driven foundation &amp; NGO committed to creating
-        meaningful impact in the lives of those who need it most. We believe
-        that real change starts with empathy.
+        Our party is dedicated to serving the people through transparent governance, inclusive development, and responsible leadership. We believe meaningful progress begins by understanding and addressing the needs of every citizen.
       </p>
 
       <button

@@ -7,7 +7,8 @@ import MegaMenu from "./MegaMenu";
 import LanguageDropdown from "./LanguageDropdown";
 
 const isItemActive = (item, pathname) => {
-  if (pathname === item.path || pathname.startsWith(item.path + "/")) return true;
+  if (pathname === item.path || pathname.startsWith(item.path + "/"))
+    return true;
 
   if (item.submenu) {
     if (item.type === "mega") {
@@ -16,7 +17,9 @@ const isItemActive = (item, pathname) => {
         .some((l) => pathname === l.path || pathname.startsWith(l.path + "/"));
     }
     if (item.type === "simple") {
-      return item.submenu.some((l) => pathname === l.path || pathname.startsWith(l.path + "/"));
+      return item.submenu.some(
+        (l) => pathname === l.path || pathname.startsWith(l.path + "/"),
+      );
     }
   }
   return false;
@@ -35,6 +38,20 @@ const DesktopNav = () => {
   const megaRef = useRef(null);
   const closeTimer = useRef(null);
 
+  const handleEnter = (idx) => {
+    clearTimeout(closeTimer.current);
+    setHoverIdx(idx);
+  };
+  const handleLeave = () => {
+    closeTimer.current = setTimeout(() => setHoverIdx(null), 150);
+  };
+
+  // Naya function — link click hone par immediately panel close karega
+  const handleLinkClick = () => {
+    clearTimeout(closeTimer.current);
+    setHoverIdx(null);
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
@@ -48,7 +65,12 @@ const DesktopNav = () => {
       gsap.fromTo(
         bgRef.current,
         { scaleY: 0 },
-        { scaleY: 1, duration: 0.4, ease: "power3.out", transformOrigin: "top" }
+        {
+          scaleY: 1,
+          duration: 0.4,
+          ease: "power3.out",
+          transformOrigin: "top",
+        },
       );
     } else {
       gsap.to(bgRef.current, {
@@ -65,18 +87,18 @@ const DesktopNav = () => {
       gsap.fromTo(
         megaRef.current,
         { autoAlpha: 0, y: -10 },
-        { autoAlpha: 1, y: 0, duration: 0.3, ease: "power3.out" }
+        { autoAlpha: 1, y: 0, duration: 0.3, ease: "power3.out" },
       );
     }
   }, [hoverIdx]);
 
-  const handleEnter = (idx) => {
-    clearTimeout(closeTimer.current);
-    setHoverIdx(idx);
-  };
-  const handleLeave = () => {
-    closeTimer.current = setTimeout(() => setHoverIdx(null), 150);
-  };
+  // const handleEnter = (idx) => {
+  //   clearTimeout(closeTimer.current);
+  //   setHoverIdx(idx);
+  // };
+  // const handleLeave = () => {
+  //   closeTimer.current = setTimeout(() => setHoverIdx(null), 150);
+  // };
 
   const activeItem = hoverIdx !== null ? navItems[hoverIdx] : null;
 
@@ -93,19 +115,34 @@ const DesktopNav = () => {
       <div
         ref={bgRef}
         className="absolute top-0 left-0 w-full h-full"
-        style={{ backgroundColor: "#ffffff", transform: "scaleY(0)", transformOrigin: "top", zIndex: -1 }}
+        style={{
+          backgroundColor: "#ffffff",
+          transform: "scaleY(0)",
+          transformOrigin: "top",
+          zIndex: -1,
+        }}
       />
 
       <div className="relative flex items-center justify-between px-10 py-4">
-        <NavLink to="/" className="font-bold text-lg leading-tight" style={{ color: "#111" }}>
-          Rashtriya Swabhiman<br />Sangh Party
+        <NavLink
+          to="/"
+          className="font-bold text-lg leading-tight"
+          style={{ color: "#111" }}
+        >
+          Rashtriya Swabhiman
+          <br />
+          Sangh Party
         </NavLink>
 
         <div className="flex items-center gap-8">
           {navItems.map((item, i) => {
             const active = isItemActive(item, location.pathname);
             return (
-              <div key={item.label} className="relative py-2" onMouseEnter={() => handleEnter(i)}>
+              <div
+                key={item.label}
+                className="relative py-2"
+                onMouseEnter={() => handleEnter(i)}
+              >
                 <NavLink
                   to={item.path}
                   className="text-sm font-bold tracking-wide relative"
@@ -116,7 +153,8 @@ const DesktopNav = () => {
                     className="absolute left-0 -bottom-2 h-[2px] w-full origin-left transition-transform duration-300"
                     style={{
                       backgroundColor: ORANGE,
-                      transform: active || hoverIdx === i ? "scaleX(1)" : "scaleX(0)",
+                      transform:
+                        active || hoverIdx === i ? "scaleX(1)" : "scaleX(0)",
                     }}
                   />
                 </NavLink>
@@ -138,7 +176,12 @@ const DesktopNav = () => {
         </div>
       </div>
 
-      <MegaMenu activeItem={activeItem} megaRef={megaRef} onMouseEnter={() => handleEnter(hoverIdx)} />
+      <MegaMenu
+        activeItem={activeItem}
+        megaRef={megaRef}
+        onMouseEnter={() => handleEnter(hoverIdx)}
+        onLinkClick={handleLinkClick}
+      />
     </div>
   );
 };

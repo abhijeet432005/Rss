@@ -56,7 +56,7 @@ const MobileNav = () => {
               </svg>
             </button>
             <p className="font-bold text-base" style={{ color: "#111" }}>Rashtriya Swabhiman Sangh Party</p>
-            <NavLink to="/login" aria-label="Login">
+            <NavLink to="/login" onClick={closeDrawer} aria-label="Login">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <circle cx="11" cy="7" r="3.2" stroke="#111" strokeWidth="1.5" />
                 <path d="M4 18c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#111" strokeWidth="1.5" strokeLinecap="round" />
@@ -69,15 +69,25 @@ const MobileNav = () => {
               <div key={item.label}>
                 <div
                   className="flex items-center justify-between cursor-pointer"
-                  onClick={() => (item.submenu ? toggleItem(item.label) : closeDrawer())}
+                  onClick={() => {
+                    if (item.submenu) {
+                      toggleItem(item.label);
+                    } else {
+                      closeDrawer();
+                    }
+                  }}
                 >
-                  <NavLink
-                    to={item.submenu ? undefined : item.path}
-                    onClick={(e) => item.submenu && e.preventDefault()}
-                    className="text-base font-bold tracking-wide"
-                  >
-                    {item.label}
-                  </NavLink>
+                  {item.submenu ? (
+                    <span className="text-base font-bold tracking-wide">{item.label}</span>
+                  ) : (
+                    <NavLink
+                      to={item.path}
+                      onClick={closeDrawer}
+                      className="text-base font-bold tracking-wide"
+                    >
+                      {item.label}
+                    </NavLink>
+                  )}
                   {item.submenu && (
                     <svg
                       width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -96,7 +106,12 @@ const MobileNav = () => {
                             <p className="text-sm font-semibold tracking-wide opacity-90 mb-2">• {groupLabel}</p>
                             <div className="flex flex-col gap-3 pl-4">
                               {links.map((l) => (
-                                <NavLink key={l.label} to={l.path} onClick={closeDrawer} className="text-sm font-semibold">
+                                <NavLink
+                                  key={l.label}
+                                  to={l.path}
+                                  onClick={closeDrawer}
+                                  className="text-sm font-semibold"
+                                >
                                   {l.label}
                                 </NavLink>
                               ))}
@@ -104,7 +119,12 @@ const MobileNav = () => {
                           </div>
                         ))
                       : item.submenu.map((l) => (
-                          <NavLink key={l.label} to={l.path} onClick={closeDrawer} className="text-sm font-semibold pl-2">
+                          <NavLink
+                            key={l.label}
+                            to={l.path}
+                            onClick={closeDrawer}
+                            className="text-sm font-semibold pl-2"
+                          >
                             {l.label}
                           </NavLink>
                         ))}
@@ -117,7 +137,9 @@ const MobileNav = () => {
               <p className="text-sm font-semibold tracking-wide opacity-90 mb-2">LANGUAGE</p>
               <div className="flex gap-4 pl-2">
                 {languages.map((lang) => (
-                  <span key={lang.code} className="text-sm font-semibold">{lang.label}</span>
+                  <span key={lang.code} className="text-sm font-semibold">
+                    {lang.label}
+                  </span>
                 ))}
               </div>
             </div>

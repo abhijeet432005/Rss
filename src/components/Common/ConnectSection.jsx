@@ -9,22 +9,22 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 const images = [
   {
     cls: "top-[80px] left-[40px] w-[200px] h-[220px]",
-    src: "https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/693a57385b8a83528dcbfba4_cta-02.webp",
+    src: "https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic23.JPG",
     alt: "Child smiling",
   },
   {
     cls: "top-[40px] right-[40px] w-[220px] h-[240px]",
-    src: "https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/693a5738b7f10ad34d65ba49_cta-03.webp",
+    src: "https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic13.jpg",
     alt: "Kids on bikes",
   },
   {
     cls: "bottom-[60px] left-[200px] w-[210px] h-[220px]",
-    src: "https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/693a57379a14ed89001132ca_cta-04.webp",
+    src: "https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic18.JPG",
     alt: "Elder man",
   },
   {
     cls: "bottom-[80px] right-[80px] w-[200px] h-[200px]",
-    src: "https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/693a57373a75419dd8d64ae2_cta-01.webp",
+    src: "https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic19.JPG",
     alt: "Volunteers",
   },
 ];

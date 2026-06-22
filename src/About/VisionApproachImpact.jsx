@@ -9,17 +9,17 @@ const tabs = [
   {
     title: "Our Vision",
     content:
-      "We envision a world where every child has access to education, healthcare, and nourishment and every community is empowered to thrive with dignity & hope. At Giveza, we believe that meaningful change begins with compassion and is sustained through collective action.",
+      "We envision a nation where every citizen has access to opportunities, quality education, affordable healthcare, and a secure future. Our vision is built on inclusive growth, social justice, and sustainable development that benefits every community.",
   },
   {
     title: "Our Approach",
     content:
-      "Our work is grounded in empathy, driven by data, and built in partnership with local communities. We focus on long-term, scalable programs that address root challenges across education, health, nutrition, and child welfare. We ensure that our support creates lasting progress not dependency.",
+      "We believe in transparent governance, citizen participation, and evidence-based policymaking. By working closely with local communities, experts, and public representatives, we strive to address challenges effectively and deliver meaningful, long-term solutions.",
   },
   {
     title: "Our Impact",
     content:
-      "Through consistent, community-rooted efforts, we've reached thousands of families with healthcare, education, and essential resources — creating measurable change that compounds year after year.",
+      "Through community engagement, public service initiatives, and development-focused programs, we continue to strengthen local communities, improve public welfare, and create opportunities that contribute to lasting progress.",
   },
 ];
 
@@ -72,45 +72,46 @@ const VisionApproachImpact = () => {
   const [activeIdx, setActiveIdx] = useState(0);
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    const ctx = gsap.context(() => {
+  useGSAP(
+    () => {
+      const ctx = gsap.context(() => {
+        // Image: reveal right-to-left with clip-path + blur + zoom
+        gsap.fromTo(
+          ".vision-img img",
+          {
+            clipPath: "inset(0% 0% 0% 100%)",
+            scale: 1.15,
+            filter: "blur(12px)",
+          },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            scale: 1,
+            filter: "blur(0px)",
+            duration: 1.3,
+            ease: "power2.inOut",
+            scrollTrigger: { trigger: ".vision-img", start: "top 80%" },
+          },
+        );
 
-      // Image: reveal right-to-left with clip-path + blur + zoom
-      gsap.fromTo(
-        ".vision-img img",
-        {
-          clipPath: "inset(0% 0% 0% 100%)",
-          scale: 1.15,
-          filter: "blur(12px)",
-        },
-        {
-          clipPath: "inset(0% 0% 0% 0%)",
-          scale: 1,
-          filter: "blur(0px)",
-          duration: 1.3,
-          ease: "power2.inOut",
-          scrollTrigger: { trigger: ".vision-img", start: "top 80%" },
-        }
-      );
+        // Tabs fade up staggered
+        gsap.fromTo(
+          ".tab-item-wrap",
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.1,
+            ease: "power3.out",
+            scrollTrigger: { trigger: ".tabs-list", start: "top 85%" },
+          },
+        );
+      }, containerRef);
 
-      // Tabs fade up staggered
-      gsap.fromTo(
-        ".tab-item-wrap",
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: { trigger: ".tabs-list", start: "top 85%" },
-        }
-      );
-
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, { scope: containerRef });
+      return () => ctx.revert();
+    },
+    { scope: containerRef },
+  );
 
   return (
     <div
@@ -119,7 +120,6 @@ const VisionApproachImpact = () => {
       style={{ backgroundColor: "#F9F6F2" }}
     >
       <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-stretch">
-
         {/* Left: tabs */}
         <div className="flex-1 min-w-0 tabs-list">
           {tabs.map((tab, i) => (
@@ -140,16 +140,13 @@ const VisionApproachImpact = () => {
         </div>
 
         {/* Right: image */}
-        <div
-          className="vision-img flex-1 min-w-0 rounded-2xl overflow-hidden h-[360px] md:h-auto"
-        >
+        <div className="vision-img flex-1 min-w-0 rounded-2xl overflow-hidden h-[360px] md:h-auto">
           <img
-            src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/6940fbde685bd95a5eceb902_vision-image.webp"
+            src="https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic17.JPG"
             alt="Medical volunteers helping elderly woman"
             className="w-full h-full object-cover block"
           />
         </div>
-
       </div>
     </div>
   );

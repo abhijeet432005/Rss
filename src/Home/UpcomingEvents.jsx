@@ -10,17 +10,17 @@ const events = [
   {
     title: "Help renovate village school rooms",
     location: "Toronto, US",
-    img: "https://cdn.prod.website-files.com/693a8987cdf1d85bb639bab7/693d11b97f72c7bac7b49a35_event-thumb-02.webp",
+    img: "https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic18.JPG",
   },
   {
     title: "Women's wellness and health camp",
     location: "Georgia, USA",
-    img: "https://cdn.prod.website-files.com/693a8987cdf1d85bb639bab7/693cfe84db735f60e5f52700_event-thumb-01.webp",
+    img: "https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic20.JPG",
   },
   {
     title: "Free meals for homeless families",
     location: "Georgia, USA",
-    img: "https://cdn.prod.website-files.com/693a8987cdf1d85bb639bab7/693d1219de3d48108251b6b4_event-thumb-05.webp",
+    img: "https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic23.JPG",
   },
 ];
 
@@ -134,16 +134,16 @@ const UpcomingEvents = () => {
     >
       {/* Header */}
       <p
-        className="eyebrow text-center text-xs font-medium tracking-widest mb-3"
+        className="eyebrow text-center text-xs font-medium uppercase tracking-widest mb-3"
         style={{ color: "#6B5B50" }}
       >
-        [ EVENTS &amp; FUNDRAISERS ]
+        [ Past Events ]
       </p>
       <h2
         className="events-heading text-center font-semibold mb-10"
         style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "#3D1A1A" }}
       >
-        Upcoming Events
+        Our Journey So Far
       </h2>
 
       {/* Grid */}

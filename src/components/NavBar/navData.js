@@ -1,7 +1,7 @@
 export const orgSubmenu = {
   "ABOUT US": [
     { label: "About Us", path: "/about" },
-    { label: "Our Leadership", path: "/leadership" },
+    { label: "Our Leadership", path: "/volunteers" },
     { label: "Mission & vision", path: "/mission-vision" },
     { label: "Organization & Structure", path: "/structure" },
     { label: "Our Constitution", path: "/constitution" },

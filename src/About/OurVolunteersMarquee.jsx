@@ -8,28 +8,22 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const volunteers = [
   {
-    name: "Leslie Alexander",
-    role: "Volunteer Manager",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80",
-    desc: "She leads volunteer coordination and ensures every program runs smoothly with care and dedication.",
+    name: "Shri. Krrishna R. Dewassi",
+    role: "National President",
+    img: "https://rssnew.s3.ap-south-1.amazonaws.com/public/Asset+1+(1).png",
+    desc: "Provides strategic leadership to the organization, guiding its vision, strengthening public engagement, and promoting policies focused on national development and public welfare.",
   },
   {
-    name: "Jenny Wilson",
-    role: "Media Coordinator",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80",
-    desc: "She creates engaging and creative content, manages social channels, coordinates campaigns, monitors performance, and supports public relations efforts to expand awareness and engagement successfully.",
+    name: "Shri. Anilkumar Thakur",
+    role: "National General Secretary",
+    img: "https://rssnew.s3.ap-south-1.amazonaws.com/public/Asset+3+(1).png",
+    desc: "Oversees organizational operations, coordinates party activities across regions, and ensures effective communication between leadership, members, and local units.",
   },
   {
-    name: "Esther Howards",
-    role: "Program Manager",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80",
-    desc: "He oversees all field programs, ensuring resources reach the right communities at the right time efficiently.",
-  },
-  {
-    name: "Bessie Cooper",
-    role: "Donor Relations",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80",
-    desc: "She manages donor relationships and builds long-term partnerships that sustain our community programs.",
+    name: "Shri. Avinash Mishra",
+    role: "National Treasurer",
+    img: "https://rssnew.s3.ap-south-1.amazonaws.com/public/Asset+4+(1).png",
+    desc: "Manages financial planning and accountability, ensuring transparent resource management and supporting the organization's long-term growth and initiatives.",
   },
 ];
 
@@ -43,8 +37,16 @@ const VolunteerCard = ({ person }) => {
     gsap.set(cardRef.current, { xPercent: 100 });
 
     const tl = gsap.timeline({ paused: true });
-    tl.to(imgRef.current, { scale: 1.08, duration: 0.6, ease: "power2.out" }, 0);
-    tl.to(cardRef.current, { xPercent: 0, duration: 0.5, ease: "power3.out" }, 0);
+    tl.to(
+      imgRef.current,
+      { scale: 1.08, duration: 0.6, ease: "power2.out" },
+      0,
+    );
+    tl.to(
+      cardRef.current,
+      { xPercent: 0, duration: 0.5, ease: "power3.out" },
+      0,
+    );
 
     const el = wrapRef.current;
     const enter = () => tl.play();
@@ -77,13 +79,25 @@ const VolunteerCard = ({ person }) => {
           className="absolute top-0 left-0 w-full h-full flex flex-col justify-start p-10"
           style={{ backgroundColor: "#E9E2D8" }}
         >
-          <p className="text-base leading-relaxed mb-6" style={{ color: "#5C4A3A" }}>
+          <p
+            className="text-base leading-relaxed mb-6"
+            style={{ color: "#5C4A3A" }}
+          >
             {person.desc}
           </p>
-          <div className="flex items-center gap-2 text-xs font-bold tracking-wider" style={{ color: "#3D1A1A" }}>
+          <div
+            className="flex items-center gap-2 text-xs font-bold tracking-wider"
+            style={{ color: "#3D1A1A" }}
+          >
             READ MORE
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M3 11L11 3M11 3H5M11 3V9" stroke="#3D1A1A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M3 11L11 3M11 3H5M11 3V9"
+                stroke="#3D1A1A"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
         </div>
@@ -104,56 +118,58 @@ const VolunteerCard = ({ person }) => {
 const OurVolunteersMarquee = () => {
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    const ctx = gsap.context(() => {
-      const split = new SplitText(".marquee-heading", { type: "lines" });
-      split.lines.forEach((line) => {
-        const wrapper = document.createElement("div");
-        wrapper.style.overflow = "hidden";
-        line.parentNode.insertBefore(wrapper, line);
-        wrapper.appendChild(line);
-      });
+  useGSAP(
+    () => {
+      const ctx = gsap.context(() => {
+        const split = new SplitText(".marquee-heading", { type: "lines" });
+        split.lines.forEach((line) => {
+          const wrapper = document.createElement("div");
+          wrapper.style.overflow = "hidden";
+          line.parentNode.insertBefore(wrapper, line);
+          wrapper.appendChild(line);
+        });
 
-      gsap.fromTo(
-        split.lines,
-        { y: "110%", opacity: 0 },
-        {
-          y: "0%",
-          opacity: 1,
-          duration: 1,
-          stagger: 0.12,
-          ease: "power3.out",
-          scrollTrigger: { trigger: ".marquee-heading", start: "top 85%" },
-        }
-      );
+        gsap.fromTo(
+          split.lines,
+          { y: "110%", opacity: 0 },
+          {
+            y: "0%",
+            opacity: 1,
+            duration: 1,
+            stagger: 0.12,
+            ease: "power3.out",
+            scrollTrigger: { trigger: ".marquee-heading", start: "top 85%" },
+          },
+        );
 
-      gsap.fromTo(
-        ".marquee-eyebrow",
-        { y: 16, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "power3.out",
-          scrollTrigger: { trigger: ".marquee-eyebrow", start: "top 88%" },
-        }
-      );
+        gsap.fromTo(
+          ".marquee-eyebrow",
+          { y: 16, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power3.out",
+            scrollTrigger: { trigger: ".marquee-eyebrow", start: "top 88%" },
+          },
+        );
 
-      // Infinite marquee scroll
-      const track = document.querySelector(".marquee-track");
-      const trackWidth = track.scrollWidth / 2;
+        // Infinite marquee scroll
+        const track = document.querySelector(".marquee-track");
+        const trackWidth = track.scrollWidth / 2;
 
-      gsap.to(track, {
-        x: -trackWidth,
-        duration: 40,
-        ease: "none",
-        repeat: -1,
-      });
+        gsap.to(track, {
+          x: -trackWidth,
+          duration: 30,
+          ease: "none",
+          repeat: -1,
+        });
+      }, containerRef);
 
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, { scope: containerRef });
+      return () => ctx.revert();
+    },
+    { scope: containerRef },
+  );
 
   return (
     <div

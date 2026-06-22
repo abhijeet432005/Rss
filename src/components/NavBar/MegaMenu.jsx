@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const MegaMenu = ({ activeItem, megaRef, onMouseEnter }) => {
+const MegaMenu = ({ activeItem, megaRef, onMouseEnter, onLinkClick }) => {
   if (!activeItem?.submenu) return null;
 
   return (
@@ -21,7 +21,13 @@ const MegaMenu = ({ activeItem, megaRef, onMouseEnter }) => {
                 </p>
                 <div className="flex flex-col gap-3">
                   {links.map((l) => (
-                    <NavLink key={l.label} to={l.path} className="text-sm" style={{ color: "#8B8B85" }}>
+                    <NavLink
+                      key={l.label}
+                      to={l.path}
+                      onClick={onLinkClick}
+                      className="text-sm"
+                      style={{ color: "#8B8B85" }}
+                    >
                       {l.label}
                     </NavLink>
                   ))}
@@ -37,7 +43,13 @@ const MegaMenu = ({ activeItem, megaRef, onMouseEnter }) => {
               </p>
               <div className="flex flex-col gap-2">
                 {activeItem.submenu.map((l) => (
-                  <NavLink key={l.label} to={l.path} className="text-sm uppercase" style={{ color: "#8B8B85" }}>
+                  <NavLink
+                    key={l.label}
+                    to={l.path}
+                    onClick={onLinkClick}
+                    className="text-sm uppercase"
+                    style={{ color: "#8B8B85" }}
+                  >
                     {l.label}
                   </NavLink>
                 ))}

@@ -8,18 +8,18 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const programs = [
   {
-    title: "Purpose-Led Programs",
-    desc: "We lead with vision, serve with purpose.",
+    title: "People-Centric Governance",
+    desc: "Committed to transparent leadership and policies that prioritize the needs of every citizen.",
     icon: "https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/69412b8a73fced90d9760530_ic-01.svg",
   },
   {
-    title: "Hands-On Help",
-    desc: "Helping communities through action, not words.",
+    title: "Community Development",
+    desc: "Working closely with local communities to improve infrastructure, education, and public services.",
     icon: "https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/69412b8a73fced90d976052f_ic-02.svg",
   },
   {
-    title: "Sustainable Support",
-    desc: "Support that grows with every step forward.",
+    title: "Progress & Opportunity",
+    desc: "Creating opportunities for growth, employment, and a stronger future for all.",
     icon: "https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/69412b8a73fced90d9760531_ic-03.svg",
   },
 ];
@@ -122,8 +122,7 @@ const ChangeStartsHere = () => {
             className="change-sub text-base md:text-lg leading-relaxed max-w-xl mb-10 md:mb-12"
             style={{ color: "#5C4A3A" }}
           >
-            Giveza focuses on programs that drive deep, lasting change. We
-            partner with people and communities to build brighter tomorrows.
+            Our party is committed to transparent governance, inclusive development, and public welfare. We work alongside citizens to address local challenges, strengthen communities, and build a prosperous future for everyone.
           </p>
 
           <div className="change-cards flex-1 flex flex-col justify-end gap-4">
@@ -156,7 +155,7 @@ const ChangeStartsHere = () => {
         {/* Right: image */}
         <div className="change-img flex-[1.1] min-w-0 rounded-2xl overflow-hidden h-[360px] md:h-auto">
           <img
-            src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/69412b8a73fced90d976052a_journey-img.webp"
+            src="https://rssnew.s3.ap-south-1.amazonaws.com/public/gallery/galleryimg13.JPG"
             alt="Children sitting together"
             className="w-full h-full object-cover block"
           />

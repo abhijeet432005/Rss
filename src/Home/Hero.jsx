@@ -78,12 +78,13 @@ const Hero = () => {
       {/* Headline */}
       <div className="text-center mb-8 md:mb-10 overflow-hidden mt-20">
         <h1
-          className="font-bold uppercase md:leading-[8rem] leading-[3rem] tracking-tight"
+          className="font-bold uppercase md:leading-[8rem] leading-[3rem] tracking-tight uppercase"
           style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "#512731" }}
         >
           SUPPORT
           <br />
-          CHANGES LIVES
+          The Movement Begins
+
         </h1>
       </div>
 
@@ -97,7 +98,7 @@ const Hero = () => {
             style={{ maxWidth: "320px", aspectRatio: "3/2", minHeight: "350px" }}
           >
             <img
-              src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/69427a8c64b9dc4e3222189a_c0c4ffbdcdfb68902cf036062283a239_video-image.webp"
+              src="https://rssnew.s3.ap-south-1.amazonaws.com/public/gallery/galleryimg6.JPG"
               alt="Children in classroom"
               className="w-full h-full object-cover"
             />
@@ -121,7 +122,7 @@ const Hero = () => {
             style={{ aspectRatio: "2/2.2", maxWidth: "700px" }}
           >
             <img
-              src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/69427a8c64b9dc4e32221894_img.webp"
+              src="https://rssnew.s3.ap-south-1.amazonaws.com/public/gallery/galleryimg13.JPG"
               alt="African school children smiling"
               className="w-full h-full object-cover"
             />
@@ -132,7 +133,7 @@ const Hero = () => {
               Together, We Create Change
             </p>
             <p className="text-sm md:text-base max-w-xs" style={{ color: "#7A6A5A" }}>
-              From small acts of kindness to global impact it all starts here.
+              Building a stronger nation through service, unity, and progress.
             </p>
           </div>
         </div>
@@ -141,8 +142,8 @@ const Hero = () => {
         <div className="right-text flex justify-start md:justify-center md:w-[40vw] md:ml-10 items-center md:mt-30 mr-auto md:mr-0">
           <div className="flex flex-col gap-6">
             <p className="text-sm md:text-base leading-relaxed md:max-w-lg" style={{ color: "#5C4A3A" }}>
-              Giveza is a purpose-driven foundation &amp; NGO committed to
-              creating meaningful impact in the lives of those who need it most.
+              We are a dynamic political party committed to a better India. With strong leadership at the helm, we advocate for democracy, inclusivity, and social justice. Together with our 25,000+ passionate karyakartas, we empower citizens and strive to build a prosperous and equitable nation. Join us on our journey of progress and unity as we shape a brighter future for all.??hows this
+
             </p>
 
             <div className="flex items-center">
@@ -153,10 +154,10 @@ const Hero = () => {
                 />
               </div>
               <button
-                className="flex items-center gap-3 justify-center h-12 w-40 rounded-[8px]"
+                className="flex items-center gap-3 justify-center h-12 pl-2 pr-2 rounded-[8px]"
                 style={{ border: "1px solid #3D1A1A", cursor: "pointer" }}
               >
-                <p className="md:text-base">Donate Now</p>
+                <p className="md:text-base">Join The Movement</p>
                 <img
                   src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/693912a128e9f87bf5ae2730_93405098fb41a22b9ad5e40831cc067a_arrow.svg"
                   alt=""

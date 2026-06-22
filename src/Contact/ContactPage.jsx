@@ -8,115 +8,128 @@ gsap.registerPlugin(SplitText);
 const ContactPage = () => {
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    // Heading split reveal
-    const split = new SplitText(".contact-heading", { type: "lines" });
-    split.lines.forEach((line) => {
-      const wrapper = document.createElement("div");
-      wrapper.style.overflow = "hidden";
-      line.parentNode.insertBefore(wrapper, line);
-      wrapper.appendChild(line);
-    });
+      // Heading split reveal
+      const split = new SplitText(".contact-heading", { type: "lines" });
+      split.lines.forEach((line) => {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "hidden";
+        line.parentNode.insertBefore(wrapper, line);
+        wrapper.appendChild(line);
+      });
 
-    tl
-      // Eyebrow fade up
-      .fromTo(
-        ".contact-eyebrow",
-        { y: 16, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6 },
-        0
-      )
-      // Heading lines slide up
-      .fromTo(
-        split.lines,
-        { y: "110%", opacity: 0 },
-        { y: "0%", opacity: 1, duration: 1, stagger: 0.12 },
-        0
-      )
-      // Avatar: scale + blur in
-      .fromTo(
-        ".contact-avatar",
-        { scale: 0.6, opacity: 0, filter: "blur(8px)" },
-        { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.8 },
-        0.3
-      )
-      // Divider line draw
-      .fromTo(
-        ".contact-divider",
-        { scaleX: 0 },
-        { scaleX: 1, duration: 0.8, ease: "power2.inOut", transformOrigin: "left" },
-        0.4
-      )
-      // Subtext fade up
-      .fromTo(
-        ".contact-sub",
-        { y: 16, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7 },
-        0.6
-      )
-      // Left column heading + paragraph
-      .fromTo(
-        ".contact-left-heading",
-        { y: 24, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7 },
-        0.8
-      )
-      .fromTo(
-        ".contact-left-desc",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7 },
-        0.9
-      )
-      // Left divider
-      .fromTo(
-        ".contact-left-divider",
-        { scaleX: 0 },
-        { scaleX: 1, duration: 0.6, ease: "power2.inOut", transformOrigin: "left" },
-        1.0
-      )
-      // Contact info row
-      .fromTo(
-        ".contact-info-row",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6 },
-        1.1
-      )
-      // Form card: clip-path reveal + blur + zoom
-      .fromTo(
-        ".contact-form-card",
-        {
-          clipPath: "inset(0% 0% 100% 0%)",
-          scale: 1.04,
-          filter: "blur(10px)",
-          opacity: 0,
-        },
-        {
-          clipPath: "inset(0% 0% 0% 0%)",
-          scale: 1,
-          filter: "blur(0px)",
-          opacity: 1,
-          duration: 1.1,
-          ease: "power2.inOut",
-        },
-        0.7
-      )
-      // Form fields stagger fade up (inside the card, after card reveal starts)
-      .fromTo(
-        ".contact-field",
-        { y: 16, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, stagger: 0.08 },
-        1.1
-      )
-      // Submit button last
-      .fromTo(
-        ".contact-submit",
-        { y: 16, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6 },
-        1.5
-      );
-  }, { scope: containerRef });
+      tl
+        // Eyebrow fade up
+        .fromTo(
+          ".contact-eyebrow",
+          { y: 16, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6 },
+          0,
+        )
+        // Heading lines slide up
+        .fromTo(
+          split.lines,
+          { y: "110%", opacity: 0 },
+          { y: "0%", opacity: 1, duration: 1, stagger: 0.12 },
+          0,
+        )
+        // Avatar: scale + blur in
+        .fromTo(
+          ".contact-avatar",
+          { scale: 0.6, opacity: 0, filter: "blur(8px)" },
+          { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.8 },
+          0.3,
+        )
+        // Divider line draw
+        .fromTo(
+          ".contact-divider",
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            duration: 0.8,
+            ease: "power2.inOut",
+            transformOrigin: "left",
+          },
+          0.4,
+        )
+        // Subtext fade up
+        .fromTo(
+          ".contact-sub",
+          { y: 16, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7 },
+          0.6,
+        )
+        // Left column heading + paragraph
+        .fromTo(
+          ".contact-left-heading",
+          { y: 24, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7 },
+          0.8,
+        )
+        .fromTo(
+          ".contact-left-desc",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7 },
+          0.9,
+        )
+        // Left divider
+        .fromTo(
+          ".contact-left-divider",
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            duration: 0.6,
+            ease: "power2.inOut",
+            transformOrigin: "left",
+          },
+          1.0,
+        )
+        // Contact info row
+        .fromTo(
+          ".contact-info-row",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6 },
+          1.1,
+        )
+        // Form card: clip-path reveal + blur + zoom
+        .fromTo(
+          ".contact-form-card",
+          {
+            clipPath: "inset(0% 0% 100% 0%)",
+            scale: 1.04,
+            filter: "blur(10px)",
+            opacity: 0,
+          },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            scale: 1,
+            filter: "blur(0px)",
+            opacity: 1,
+            duration: 1.1,
+            ease: "power2.inOut",
+          },
+          0.7,
+        )
+        // Form fields stagger fade up (inside the card, after card reveal starts)
+        .fromTo(
+          ".contact-field",
+          { y: 16, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, stagger: 0.08 },
+          1.1,
+        )
+        // Submit button last
+        .fromTo(
+          ".contact-submit",
+          { y: 16, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6 },
+          1.5,
+        );
+    },
+    { scope: containerRef },
+  );
 
   return (
     <div
@@ -162,8 +175,9 @@ const ContactPage = () => {
           className="contact-sub text-base md:text-lg max-w-2xl"
           style={{ color: "#5C4A3A" }}
         >
-          Whether you want to volunteer, donate, partner, or simply connect we'd
-          love to hear from you.
+          Whether you want to become a member, volunteer, participate in our
+          initiatives, or connect with our team, we would be glad to hear from
+          you.
         </p>
 
         {/* Grid */}
@@ -177,14 +191,15 @@ const ContactPage = () => {
                 color: "#3D1A1A",
               }}
             >
-              We're Here to Help
+              Reach Out to Our Team
             </h2>
             <p
               className="contact-left-desc text-base leading-relaxed mb-10 max-w-md"
               style={{ color: "#5C4A3A" }}
             >
-              Giveza welcomes your thoughts, questions, and feedback with open
-              arms. Let us know how we can help or collaborate.
+              We welcome your thoughts, suggestions, and questions. Connect with
+              us to share your ideas, learn more about our initiatives, or
+              explore opportunities to contribute to our mission.
             </p>
 
             <div
@@ -218,9 +233,7 @@ const ContactPage = () => {
           </div>
 
           {/* Right: Form card */}
-          <div
-            className="contact-form-card flex-1 bg-white rounded-3xl p-6 md:p-10 w-full max-w-2xl overflow-hidden"
-          >
+          <div className="contact-form-card flex-1 bg-white rounded-3xl p-6 md:p-10 w-full max-w-2xl overflow-hidden">
             <div className="flex flex-col md:flex-row gap-4 md:gap-5 mb-4 md:mb-5">
               <div
                 className="contact-field flex-1 flex items-center gap-3 rounded-xl px-4 py-4"
@@ -234,7 +247,13 @@ const ContactPage = () => {
                   className="flex-shrink-0"
                   style={{ color: "#8B7B70" }}
                 >
-                  <circle cx="9" cy="5.5" r="3" stroke="currentColor" strokeWidth="1.4" />
+                  <circle
+                    cx="9"
+                    cy="5.5"
+                    r="3"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                  />
                   <path
                     d="M3 16c0-3 2.5-5 6-5s6 2 6 5"
                     stroke="currentColor"
@@ -261,7 +280,13 @@ const ContactPage = () => {
                   className="flex-shrink-0"
                   style={{ color: "#8B7B70" }}
                 >
-                  <circle cx="9" cy="5.5" r="3" stroke="currentColor" strokeWidth="1.4" />
+                  <circle
+                    cx="9"
+                    cy="5.5"
+                    r="3"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                  />
                   <path
                     d="M3 16c0-3 2.5-5 6-5s6 2 6 5"
                     stroke="currentColor"
@@ -291,8 +316,21 @@ const ContactPage = () => {
                   className="flex-shrink-0"
                   style={{ color: "#8B7B70" }}
                 >
-                  <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.4" />
-                  <path d="M2 6l7 4.5L16 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                  <rect
+                    x="2"
+                    y="4"
+                    width="14"
+                    height="10"
+                    rx="2"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                  />
+                  <path
+                    d="M2 6l7 4.5L16 6"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                  />
                 </svg>
                 <input
                   type="email"

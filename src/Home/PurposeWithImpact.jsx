@@ -127,8 +127,8 @@ const PurposeWithImpact = () => {
       );
 
       // --- Stats count up animation ---
-      const statNums = [100, 26850, 210];
-      const statSuffixes = ["%", "+", "+"];
+      const statNums = [25000, 100, 8];
+      const statSuffixes = ["+", "+", " States"];
       const statPrefixes = ["", "", ""];
 
       document.querySelectorAll(".stat-num").forEach((el, i) => {
@@ -210,7 +210,7 @@ const PurposeWithImpact = () => {
           <div className="flex flex-col md:flex-row md:justify-between gap-8 items-end mt-16 md:mt-32">
             <div className="flex-shrink-0">
               <img
-                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&q=80"
+                src="https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic9.jpg"
                 alt="Volunteers sorting food boxes"
                 className="small-img rounded-xl object-cover"
                 style={{ width: "200px", height: "200px" }}
@@ -232,7 +232,7 @@ const PurposeWithImpact = () => {
           style={{ height: "480px" }}
         >
           <img
-            src="https://cdn.prod.website-files.com/6887734e6643e3b9bf041596/69414f141534717096b623d8_4bfd0fc675d3d720b058e8b95d37206c_about-main.webp"
+            src="https://rssnew.s3.ap-south-1.amazonaws.com/public/media-gallery/pic18.JPG"
             alt="Smiling African children"
             className="w-full h-full object-cover"
           />
@@ -246,19 +246,19 @@ const PurposeWithImpact = () => {
       >
         {[
           {
-            num: "0%",
-            label: "Donation Transparency",
-            desc: "Directly reaching community projects and beneficiaries",
+            num: "0+",
+            label: "Dedicated Karyakartas",
+            desc: "A growing network of committed individuals working towards the party’s vision.",
           },
           {
             num: "0+",
-            label: "Lives Touched",
-            desc: "Through education, nutrition, healthcare, and shelter programs.",
+            label: "Public Initiatives",
+            desc: "Community-driven efforts focused on awareness, support, and development.",
           },
           {
-            num: "0+",
-            label: "Health Camps Organized",
-            desc: "Medical camps delivered in remote and underserved regions.",
+            num: "0",
+            label: "states reached",
+            desc: "We are actively making a difference in 8 states, driving progress and development.",
           },
         ].map((stat, i) => (
           <div

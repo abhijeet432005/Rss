@@ -8,29 +8,34 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const faqs = [
   {
-    question: "Is there a minimum donation amount?",
+    question: "How can I become a member of the party?",
     answer:
-      "No, you can donate any amount you're comfortable with — every contribution helps us reach more lives.",
+      "You can join the party by filling out the membership form on our website. Our team will review your application and contact you with the next steps.",
   },
   {
-    question: "Are corporate donations accepted?",
+    question: "How can I volunteer for party activities?",
     answer:
-      "Yes, we welcome corporate partnerships and donations. Reach out to our team to set up a giving plan that fits your company.",
+      "We welcome volunteers for outreach programs, community events, campaigns, and awareness drives. Register through our volunteer section to get involved.",
   },
   {
-    question: "Can schools or colleges partner with Giveza?",
+    question: "Where can I learn about the party's vision and policies?",
     answer:
-      "Absolutely. We collaborate with educational institutions on awareness drives, volunteering programs, and fundraising events.",
+      "Our vision, mission, and policy priorities are available in the manifesto section of the website, where you can learn about our goals and commitments.",
   },
   {
-    question: "What types of programs do you run?",
+    question: "How can I participate in local events and meetings?",
     answer:
-      "We run education support, healthcare camps, food distribution drives, and emergency relief programs across multiple regions.",
+      "Upcoming events, rallies, and community meetings are regularly updated on our website. You can register online to participate.",
   },
   {
-    question: "Can I dedicate my donation to someone?",
+    question: "How can I contact party representatives?",
     answer:
-      "Yes, you can dedicate your donation in memory or honor of someone special during the checkout process.",
+      "You can reach our representatives through the contact page, email, or by visiting your nearest party office listed on the website.",
+  },
+  {
+    question: "Does the party accept donations?",
+    answer:
+      "Yes, eligible contributions can be made through the official donation channels in accordance with applicable laws and regulations.",
   },
 ];
 

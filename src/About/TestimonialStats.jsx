@@ -8,51 +8,50 @@ gsap.registerPlugin(ScrollTrigger);
 const testimonials = [
   {
     quote:
-      "My son had to leave school due to financial issues, but thanks to Giveza, he now receives free books and attends classes again. Their support changed our lives, & I'll forever be grateful for the kindness they've shown my family",
+      "The party's local development initiatives helped improve roads and public facilities in our area. We've seen real progress and better access to essential services.",
     name: "Leslie Alexander",
-    loc: "Dallas, USA",
+    loc: "Delhi, India",
     img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
   },
   {
     quote:
-      "Giveza's health camp gave my mother the checkup she needed for years. We finally had access to doctors in our village.",
+      "I joined as a volunteer during community outreach programs and was impressed by the team's dedication to addressing local concerns and supporting citizens.",
     name: "Robert Fox",
-    loc: "Lagos, Nigeria",
+    loc: "Mumbai, India",
     img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
   },
   {
     quote:
-      "Through the food distribution program, my family never went a week without a proper meal during the hardest year of our lives.",
+      "The party's focus on youth engagement and employment opportunities has encouraged many young people in our region to participate in shaping a better future.",
     name: "Esther Howard",
-    loc: "Manila, Philippines",
+    loc: "Bengaluru, India",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
   },
 ];
 
 const stats = [
   {
-    badge: "School Kits Donated",
-    target: 8200,
+    badge: "Active Volunteers",
+    target: 12000,
     suffix: "+",
-    label: "Helping children stay in school with essentials.",
+    label: "Citizens working together for positive change.",
     bg: "linear-gradient(135deg, #D8C2BD, #C3AFA8)",
   },
   {
-    badge: "Communities",
-    target: 100,
-    suffix: "%",
-    label: "Locally Led Projects",
+    badge: "Districts Reached",
+    target: 250,
+    suffix: "+",
+    label: "Strong grassroots presence across regions.",
     bg: "#B7BB9C",
   },
   {
-    badge: "Trusted by",
-    target: 98,
+    badge: "Public Support",
+    target: 95,
     suffix: "%",
-    label: "Donor Satisfaction",
+    label: "Driven by trust, participation, and engagement.",
     bg: "#EDE49B",
   },
 ];
-
 const StatCard = ({ stat, className = "" }) => {
   const numRef = useRef(null);
 
@@ -131,7 +130,6 @@ const TestimonialStats = () => {
   return (
     <div className="px-4 md:px-10 py-20" style={{ backgroundColor: "#F9F6F2" }}>
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8">
-
         {/* Testimonial card — outer frame fixed, track slides inside */}
         <div
           className="rounded-xl p-7 md:p-10 flex flex-col justify-between min-h-[420px] md:min-h-[660px] relative overflow-hidden"
@@ -156,10 +154,17 @@ const TestimonialStats = () => {
 
                   <div className="flex items-center gap-3 md:gap-4 mt-8">
                     <div className="w-11 h-11 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0">
-                      <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                      <img
+                        src={t.img}
+                        alt={t.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
-                      <p className="text-base md:text-lg font-semibold" style={{ color: "#3D1A1A" }}>
+                      <p
+                        className="text-base md:text-lg font-semibold"
+                        style={{ color: "#3D1A1A" }}
+                      >
                         {t.name}
                       </p>
                       <p className="text-sm" style={{ color: "#5C4A3A" }}>
@@ -180,7 +185,13 @@ const TestimonialStats = () => {
               className="w-11 h-11 rounded-full bg-white flex items-center justify-center"
             >
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M11 4l-6 5 6 5" stroke="#3D1A1A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M11 4l-6 5 6 5"
+                  stroke="#3D1A1A"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
             <button
@@ -189,7 +200,13 @@ const TestimonialStats = () => {
               className="w-11 h-11 rounded-full bg-white flex items-center justify-center"
             >
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M7 4l6 5-6 5" stroke="#3D1A1A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M7 4l6 5-6 5"
+                  stroke="#3D1A1A"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
           </div>
@@ -203,7 +220,6 @@ const TestimonialStats = () => {
             <StatCard stat={stats[2]} className="min-h-[180px]" />
           </div>
         </div>
-
       </div>
     </div>
   );
